@@ -1,0 +1,23 @@
+
+while True:
+    prompt = input('User: ')
+    call = Intent(prompt) # ["extract clipboard", "take screenshot", "capture webcam", "None"]
+
+    if 'take screenshot' in call:
+        print('Taking Screenshot')
+        take_screenshot()
+        visual_context = vision_prompt(prompt=prompt, photo_path='6.Rudra/screenshot.jpg')
+    elif 'capture webcam' in call:
+        print('Capturing Webcam')
+        web_cam_capture()
+        visual_context = vision_prompt(prompt=prompt, photo_path='6.Rudra/webcam.jpg')
+    elif 'extract clipboard' in call:
+        print('Copying Clipboard text')
+        paste = get_clipboard_text()
+        prompt = f'{prompt}\n\n CLIPBOARD CONTENT: {paste}'
+        visual_context = None
+    else:
+        visual_context = None
+
+    response = groq_prompt(prompt=prompt, img_context=visual_context)
+    print(response)
