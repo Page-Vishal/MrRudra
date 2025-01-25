@@ -1,6 +1,6 @@
-# Assistant Rudra
+# Mr. Rudra
 
-Assistant Rudra is a versatile and advanced AI-powered assistant available in two versions:
+Mr. Rudra is a versatile and advanced AI-powered assistant available in two versions:
 
 1. **Rudra_Assistant**: OpenAI-based, providing faster performance and streaming capabilities (for users with OpenAI API access).
 2. **Rudra_Cheap**: A cost-effective version leveraging free methods for assistant development.
